@@ -1,0 +1,25 @@
+terraform {
+  before_hook "before_hook" {
+    commands = ["apply", "plan"]
+    execute  = ["echo", "Running Terraform"]
+  }
+
+  after_hook "after_hook" {
+    commands     = ["apply", "plan"]
+    execute      = ["echo", "Finished running Terraform"]
+    run_on_error = true
+  }
+}
+
+remote_state {
+  backend = "s3"
+
+  config = {
+    encrypt        = true
+    bucket         = {{ state_s3_bucket }}
+    key            = "{{ package_name }}/${path_relative_to_include()}/terraform.tfstate"
+    region         = {{ state_s3_bucket_region}}
+    dynamodb_table = {{ state_s3_lock_table}}
+    disable_bucket_update = true
+  }
+}

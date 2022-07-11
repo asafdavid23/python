@@ -1,0 +1,22 @@
+accounts:
+ - prod
+ - non-prod
+ - staging
+
+regions:
+  - us-east-1
+  - eu-west-1
+
+environments:
+  - dev
+  - prod
+  - stg
+
+terrgrunt:
+  default_name: terragrunt.hcl
+  package_name: 'dome9-terrargunt'
+  s3_backend_config:
+    bucket: terragrunt-backend-config
+    region: us-east-1
+    key: terragrunt-backend-config.yaml
+    dynamodb_table: table
