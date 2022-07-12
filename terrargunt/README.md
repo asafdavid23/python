@@ -16,3 +16,63 @@ source .venv/bin/activate
 pip install -r requirements.txt
 python script.py
 ```
+
+## Example
+```
+live
+├── non-prod
+│   ├── account.yaml
+│   ├── eu-west-1
+│   │   ├── dev
+│   │   │   └── env.yaml
+│   │   ├── prod
+│   │   │   └── env.yaml
+│   │   ├── region.yaml
+│   │   └── stg
+│   │       └── env.yaml
+│   └── us-east-1
+│       ├── dev
+│       │   └── env.yaml
+│       ├── prod
+│       │   └── env.yaml
+│       ├── region.yaml
+│       └── stg
+│           └── env.yaml
+├── prod
+│   ├── account.yaml
+│   ├── eu-west-1
+│   │   ├── dev
+│   │   │   └── env.yaml
+│   │   ├── prod
+│   │   │   └── env.yaml
+│   │   ├── region.yaml
+│   │   └── stg
+│   │       └── env.yaml
+│   └── us-east-1
+│       ├── dev
+│       │   └── env.yaml
+│       ├── prod
+│       │   └── env.yaml
+│       ├── region.yaml
+│       └── stg
+│           └── env.yaml
+├── staging
+│   ├── account.yaml
+│   ├── eu-west-1
+│   │   ├── dev
+│   │   │   └── env.yaml
+│   │   ├── prod
+│   │   │   └── env.yaml
+│   │   ├── region.yaml
+│   │   └── stg
+│   │       └── env.yaml
+│   └── us-east-1
+│       ├── dev
+│       │   └── env.yaml
+│       ├── prod
+│       │   └── env.yaml
+│       ├── region.yaml
+│       └── stg
+│           └── env.yaml
+└── terragrunt.hcl
+```
